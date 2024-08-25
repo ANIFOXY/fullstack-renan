@@ -50,3 +50,12 @@ li {
 li:last-child{
     border: none;
 }
+
+button.edit {
+    background-color: #007bff;
+    color: #FFF;
+}
+
+button.edit:hover {
+    background-color: #0056b3;
+}

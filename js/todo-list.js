@@ -17,6 +17,16 @@ document.addEventListener('DOMContentLoaded',() => {
             const li = document.createElement('li')
             li.textContent = inputValue;
 
+            const editButton = document.createElement('button')
+            editButton.textContent = 'Alterar';
+            editButton.className = 'edit'
+            editButton.addEventListener('click', () => {
+                const newTask = prompt('Editar tarefa:', li.firstChild.textContent)
+                if (newTask !== null) {
+                    li.firstChild.textContent = newTask.trim();
+                }
+            })
+
             const deleteButton = document.createElement('button')
             deleteButton.textContent = "Deletar"
             deleteButton.className = "delete"
@@ -25,6 +35,7 @@ document.addEventListener('DOMContentLoaded',() => {
                 todoList.removeChild(li)
             })
 
+            li.appendChild(editButton)
             li.appendChild(deleteButton)
             todoList.append(li);
             input.value = '';
